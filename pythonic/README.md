@@ -1,6 +1,6 @@
 # Objetos Pythônicos
 
-Apresentação do Luciano Ramalho no Garoa Hacker Club dia 11/05/16.
+[Apresentação][0] do [Luciano Ramalho][1] no [Garoa Hacker Club][2] dia 11/05/16.
 
 
 ### Tamanho com `len()`
@@ -24,11 +24,16 @@ for i in L:
     print(i, end=' ')
 ```
 
+### Rodando um doctest
+
+Veja o exemplo [vector0.py][3].
+
 ```bash
 $ python -m doctest vector0.py -v
 $ python -m doctest vector0.py -o FAIL_FAST
 ```
 
-https://speakerdeck.com/ramalho/objetos-pythonicos-1
-
-https://github.com/fluentpython/pythonic-api/blob/master/examples/vector0.py
+[0]: https://speakerdeck.com/ramalho/objetos-pythonicos-1
+[1]: https://github.com/ramalho
+[2]: https://garoa.net.br/wiki/P%C3%A1gina_principal
+[3]: https://github.com/fluentpython/pythonic-api/blob/master/examples/vector0.py
