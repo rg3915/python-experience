@@ -1,0 +1,3 @@
+perfeitos.py
+potencia.py
+rg.py

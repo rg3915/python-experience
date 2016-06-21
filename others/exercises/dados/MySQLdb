@@ -1,0 +1,13 @@
+CREATE TABLE `test`.`name` (
+	`nameid` INT NOT NULL AUTO_INCREMENT ,
+	`firstname` VARCHAR(45) NULL ,
+	`lastname` VARCHAR(45) NULL ,
+	PRIMARY KEY (`nameid`)
+);
+
+ÌNSERT INTO `test`.`name`
+(`firstname`,`lastname`)
+VALUES
+("Cookie","Monster"),
+("Guy","Smiley"),
+("Big","Bird"),
