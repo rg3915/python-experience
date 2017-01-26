@@ -7,25 +7,20 @@
 '''
 
 
-def obter_input():
-    valor = input()
-    d = {}
-    d['a'] = valor.split()[0]
-    d['b'] = valor.split()[1]
-    d['sinal'] = valor.split()[2]
-    return d
-
-
-def soma(a, b, sinal):
-    return a + b
-
-
 def rpn():
-    res = obter_input()
-    a = int(res['a'])
-    b = int(res['b'])
-    sinal = res['sinal']
-    return soma(a, b, sinal)
+    a, b, sinal = input().split()
+    a, b = int(a), int(b)
+    switch = {
+        '+': '__add__',
+        '-': '__sub__',
+        '*': '__mul__',
+        '//': '__floordiv__',
+        '/': '__div__',
+        '%': '__mod__',
+        '**': '__pow__'
+    }
+    dunder_method = switch.get(sinal)
+    return getattr(a, dunder_method)(b)
 
 
 if __name__ == '__main__':
