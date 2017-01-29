@@ -1,3 +1,5 @@
+#-*- coding: utf-8 -*-
+
 from unittest.mock import patch
 
 
@@ -41,6 +43,8 @@ def rpn():
     dunder_method = switch.get(sinal)
     return getattr(a, dunder_method)(b)
 
+def is_float(num):
+    return '.' in num
 
 def rpn(expr):
     if not expr:
@@ -48,7 +52,7 @@ def rpn(expr):
     expr = expr.split(' ')
     stack = []
     for n in expr:
-        if n.isdigit() or '.' in n:
+        if n.isdigit() or is_float(n):
             stack.append(n)
         else:
             num = str(eval('{2}{1}{0}'.format(stack.pop(), n, stack.pop())))

@@ -14,6 +14,8 @@ Vector: classe vetor euclidiano
     Vector([10.0, 20.0])
     >>> 10 * v1 # sobrecarga de operadores
     Vector([10.0, 20.0])
+    >>> bool(v1)
+    True
 '''
 
 from array import array
@@ -54,3 +56,7 @@ class Vector:
 
     def __rmul__(self, other):
         return self * other
+
+    def __bool__(self):
+        return bool(abs(self))
+
