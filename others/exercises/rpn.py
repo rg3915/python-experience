@@ -42,6 +42,20 @@ def rpn():
     return getattr(a, dunder_method)(b)
 
 
+def rpn(expr):
+    if not expr:
+        return 0
+    expr = expr.split(' ')
+    stack = []
+    for n in expr:
+        if n.isdigit() or '.' in n:
+            stack.append(n)
+        else:
+            num = str(eval('{2}{1}{0}'.format(stack.pop(), n, stack.pop())))
+            stack.append(num)
+    return float(stack[-1]) if '.' in stack[-1] else int(stack[-1])
+
+
 def test_rpn():
     with patch('__main__.input') as mocked_input:
         mocked_input.return_value = '40 2 +'
@@ -49,4 +63,12 @@ def test_rpn():
 
 
 if __name__ == '__main__':
-    print(rpn())
+    print(rpn('5 1 2 + 4 * + 3 -'))
+    print(rpn(''))
+    print(rpn('1 2 3'))
+    print(rpn('1 3 +'))
+    print(rpn('1 3 *'))
+    print(rpn('1 3 -'))
+    print(rpn('4 2 /'))
+    print(rpn('1 3 5 +'))
+    print(rpn('10 3 2 -'))
