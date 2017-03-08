@@ -7,3 +7,10 @@ n! = 1,       se n = 0
 
 Solução:
 '''
+n = int(input("Digite um número: "))
+resultado = 1
+i = n
+while (i >= 1):
+	resultado = resultado * i
+	i = i - 1
+print(resultado)
