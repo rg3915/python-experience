@@ -2,3 +2,11 @@
 
 Solução:
 '''
+n = int(input("Digite um número: "))
+k = int(input("Digite outro número: "))
+resultado = 1
+potencia = 0
+while (potencia < k):
+	resultado = resultado * n
+	potencia = potencia + 1
+print(resultado)
