@@ -12,8 +12,8 @@ numero = int(input())
 
 print(numero)
 
-while (numero != 0):
-    soma += numero
+while numero != 0:
+    soma = soma + numero
     numero = int(input())
     print(numero)
 
