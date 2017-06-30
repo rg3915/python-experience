@@ -8,10 +8,10 @@ def get_all_combinations(*args):
     yield from combinations
 
 
-def replace_by_x(pos, combination):
-    combination[pos] = 'X'
+def replace_by_x(combination, *positions):
+    for position in positions:
+        combination[position] = 'X'
     return ''.join(combination)
-
 
 if __name__ == '__main__':
     a1 = ['E', 'I']
@@ -21,6 +21,6 @@ if __name__ == '__main__':
 
     for position in range(4):
         combinations = get_all_combinations(a1, a2, a3, a4)
-        raw_results = (replace_by_x(position, c) for c in combinations)
+        raw_results = (replace_by_x(c, 0, position) for c in combinations)
         results = sorted(list(set(raw_results)))
         print(results)
