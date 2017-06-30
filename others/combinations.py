@@ -29,4 +29,4 @@ if __name__ == '__main__':
         results = sorted(list(set(raw_results)))
         res.extend(results)
 
-    print(res)
+    print(sorted(res))
