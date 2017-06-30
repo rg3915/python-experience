@@ -23,11 +23,10 @@ if __name__ == '__main__':
     # [(0, 1), (0, 2), (0, 3), (1, 2), (1, 3), (2, 3)]
     comb = list(combinations(range(4), 2))
 
-    for position in range(4):
-        for i, j in comb:
-            combinations = get_all_combinations(a1, a2, a3, a4)
-            raw_results = (replace_by_x(c, i, j) for c in combinations)
-            results = sorted(list(set(raw_results)))
-            res.extend(results)
+    for i, j in comb:
+        combinations = get_all_combinations(a1, a2, a3, a4)
+        raw_results = (replace_by_x(c, i, j) for c in combinations)
+        results = sorted(list(set(raw_results)))
+        res.extend(results)
 
-    print(list(set(res)))
+    print(res)
