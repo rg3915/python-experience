@@ -1,7 +1,8 @@
 # -*- coding: utf-8 -*-
 '''
+Converte arquivos doc e docx para pdf.
+
 Parâmetros de entrada:
-python word_to_pdf.py <in_file.doc> <out_file.pdf>
 python word_to_pdf.py file.doc file.pdf
 '''
 import os
@@ -15,8 +16,9 @@ out_file = os.path.abspath(sys.argv[2])
 
 data = in_file.read()
 
-#set up the request
-req = urllib2.Request("http://converter-eval.plutext.com:80/v1/00000000-0000-0000-0000-000000000000/convert", data)
+# set up the request
+req = urllib2.Request(
+    "http://converter-eval.plutext.com:80/v1/00000000-0000-0000-0000-000000000000/convert", data)
 req.add_header('Content-Length', '%d' % len(data))
 req.add_header('Content-Type', 'application/octet-stream')
 
