@@ -1,6 +1,5 @@
 def soma(**kwargs):
-    result = [kwargs[i] for i in kwargs]
-    return sum(result)
+    return sum(kwargs.values())
 
 
 if __name__ == '__main__':
