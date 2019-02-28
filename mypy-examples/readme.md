@@ -1,6 +1,16 @@
 readme.md
 
 
+http://mypy-lang.org/
+
+https://twitter.com/gvanrossum/status/1095036541179555840
+
+https://www.python.org/dev/peps/pep-0484/
+
+https://www.python.org/dev/peps/pep-0526/
+
+
+
 
 $ mypy example01.py 
 example01.py:2: error: Incompatible return value type (got "str", expected "int")
