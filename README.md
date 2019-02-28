@@ -8,6 +8,7 @@ A intenção deste projeto é colocar em prática as experiências em Python, pr
 * Web Scraping
 * Exercícios de Matemática
 
+
 [0]: https://realpython.com/
 [1]: https://www.urionlinejudge.com.br/
 [2]: https://projecteuler.net/
