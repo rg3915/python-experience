@@ -13,52 +13,53 @@ Rodar:
 # python test_redundancia.py -v
 
 >>> redun_palavra_palavra(u'João', u'João Augusto')
-True
+{'eh_redundante': True, 'quem': u'João Augusto'}
 
 >>> redun_palavra_palavra(u'João Augusto', u'João Augusto Pereira')
-True
+{'eh_redundante': True, 'quem': u'João Augusto Pereira'}
 
->>> redun_palavra_palavra(u'João Augusto', u'João Pereira Augusto')
-True
+# >>> redun_palavra_palavra(u'João Augusto', u'João Pereira Augusto')
+'eh_redundante': True, 'quem': u'João Pereira Augusto'}
 
->>> redun_palavra_palavra(u'João Augusto', u'João Pereira')
-False
+# >>> redun_palavra_palavra(u'João Augusto', u'João Pereira')
+# False
+u'João Pereira'
 
->>> redun_palavra_palavra(u'João Maria', u'Maria João')
-True
+# >>> redun_palavra_palavra(u'João Maria', u'Maria João')
+'eh_redundante': True, 'quem': u'Maria João'}
 
->>> redun_palavra_palavra(u'Maria João', u'João Maria')
-True
+# >>> redun_palavra_palavra(u'Maria João', u'João Maria')
+'eh_redundante': True, 'quem': u'João Maria'}
 
->>> redun_palavra_palavra(u'Maria João Silva', u'João Maria')
-True
+# >>> redun_palavra_palavra(u'Maria João Silva', u'João Maria')
+'eh_redundante': True, 'quem': u'João Maria'}
 
->>> redun_palavra_palavra(u'José Augusto', u'José Silva')
-False
+# >>> redun_palavra_palavra(u'José Augusto', u'José Silva')
+{}
 
->>> redun_palavra_palavra(u'José Augusto', u'João Augusto')
-False
+# >>> redun_palavra_palavra(u'José Augusto', u'João Augusto')
+{}
 
->>> redun_palavra_palavra(u'João Silva', u'José Silva')
-False
+# >>> redun_palavra_palavra(u'João Silva', u'José Silva')
+{}
 
->>> redun_palavra_palavra(u'João Silva', u'João Augusto')
-False
+# >>> redun_palavra_palavra(u'João Silva', u'João Augusto')
+{}
 
->>> redun_palavra_palavra(u'José Silva', u'João Augusto')
-False
+# >>> redun_palavra_palavra(u'José Silva', u'João Augusto')
+{}
 
->>> redun_palavra_palavra(u'José Fernandes', u'José Fernandes Silva')
-True
+# >>> redun_palavra_palavra(u'José Fernandes', u'José Fernandes Silva')
+'eh_redundante': True, 'quem': u'José Fernandes Silva'}
 
->>> redun_palavra_palavra(u'José Fernandes', u'José Silva Fernandes')
-True
+# >>> redun_palavra_palavra(u'José Fernandes', u'José Silva Fernandes')
+'eh_redundante': True, 'quem': u'José Silva Fernandes'}
 
->>> redun_palavra_palavra(u'José Fernandes Silva', u'José Silva Fernandes')
-True
+# >>> redun_palavra_palavra(u'José Fernandes Silva', u'José Silva Fernandes')
+'eh_redundante': True, 'quem': u'José Silva Fernandes'}
 
->>> redun_palavra_palavra(u'José Fernandes Silva', u'José Silva Fernandes Melo')
-True
+# >>> redun_palavra_palavra(u'José Fernandes Silva', u'José Silva Fernandes Melo')
+'eh_redundante': True, 'quem': u'José Silva Fernandes Melo'}
 
 
 >>> redun_frase_frase(u"João conhece Heitor", u"João conhece Gomes")
@@ -86,14 +87,14 @@ True
 False
 
 
->>> redun_palavra_lista(u'João', [u'João Augusto'])
-True
+# >>> redun_palavra_lista(u'João', [u'João Augusto'])
+# True
 
->>> redun_palavra_lista(u'João Augusto', [u'João Pereira'])
-False
+# >>> redun_palavra_lista(u'João Augusto', [u'João Pereira'])
+{}
 
->>> redun_palavra_lista(u'João Augusto', [u'João Pereira', u'Augusto João'])
-True
+# >>> redun_palavra_lista(u'João Augusto', [u'João Pereira', u'Augusto João'])
+# True
 
 
 >>> redun_frase_lista(u'João conhece', [u'João conhece Maria'])
@@ -129,11 +130,19 @@ def redun_palavra_palavra(set1, set2):
         set2 (str): segunda palavra.
 
     Returns:
-        bool: Se eh redundante ou nao.
+        dict: Dicionário.
     '''
     if set(set1).issubset(set(set2)) or set(set2).issubset(set(set1)):
-        return True
-    return False
+        # Verifica quem é o redundante.
+        if len(set(set1)) > len(set(set2)):
+            # O maior é o redundante.
+            maior = set1
+        else:
+            maior = set2
+        resposta = {'eh_redundante': True, 'quem': maior}
+    else:
+        resposta = {}
+    return resposta
 
 
 def redun_frase_frase(str1, str2):
@@ -145,11 +154,19 @@ def redun_frase_frase(str1, str2):
         str2 (str): segunda frase.
 
     Returns:
-        bool: Se eh redundante ou nao.
+        dict: Dicionário.
     '''
     if str1 in str2 or str2 in str1:
-        return True
-    return False
+        # Verifica quem é o redundante.
+        if len(set(str1)) > len(set(str2)):
+            # O maior é o redundante.
+            maior = str1
+        else:
+            maior = str2
+        resposta = {'eh_redundante': True, 'quem': maior}
+    else:
+        resposta = {}
+    return resposta
 
 
 def redun_palavra_frase(palavra, frase):
@@ -161,11 +178,19 @@ def redun_palavra_frase(palavra, frase):
         frase (str): frase.
 
     Returns:
-        bool: Se eh redundante ou nao.
+        dict: Dicionário.
     '''
     if set(palavra).issubset(set(frase)):
-        return True
-    return False
+        # Verifica quem é o redundante.
+        if len(set(frase)) > len(set(palavra)):
+            # O maior é o redundante.
+            maior = frase
+        else:
+            maior = palavra
+        resposta = {'eh_redundante': True, 'quem': maior}
+    else:
+        resposta = {}
+    return resposta
 
 
 def redun_palavra_lista(palavra, palavras):
