@@ -390,19 +390,19 @@ class RedundanciaPFListaTest(unittest.TestCase):
         esperado = {'eh_redundante': True, 'quem': frases[-1]}
         self.assertEqual(redun_palavra_frase_lista(palavra, frases), esperado)
 
-    def test_pfl1(self):
+    def test_pfl2(self):
         palavra = 'João Gomes'
         frases = ['João conhece Gomes']
         esperado = {'eh_redundante': True, 'quem': frases[-1]}
         self.assertEqual(redun_palavra_frase_lista(palavra, frases), esperado)
 
-    def test_pfl1(self):
+    def test_pfl3(self):
         palavra = 'João Gomes Silva'
         frases = ['João conhece Gomes']
         esperado = {}
         self.assertEqual(redun_palavra_frase_lista(palavra, frases), esperado)
 
-    def test_pfl1(self):
+    def test_pfl4(self):
         palavra = 'João Gomes'
         frases = ['João Silva', 'Gomes João']
         esperado = {'eh_redundante': True, 'quem': palavra}
