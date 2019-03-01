@@ -82,6 +82,9 @@ False
 >>> redun_palavra_frase(u"João Maria", u"João conhece Maria")
 True
 
+>>> redun_palavra_frase(u"João conhece Maria", u"João Maria")
+False
+
 
 >>> redun_palavra_lista(u'João', [u'João Augusto'])
 True

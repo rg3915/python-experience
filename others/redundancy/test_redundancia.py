@@ -293,6 +293,11 @@ class RedundanciaPFTest(unittest.TestCase):
         frase = "João conhece Maria"
         self.assertEqual(redun_palavra_frase(palavra, frase), True)
 
+    def test_pf4(self):
+        palavra = "João conhece Maria"
+        frase = "João Maria"
+        self.assertEqual(redun_palavra_frase(palavra, frase), False)
+
 
 class RedundanciaPPListaTest(unittest.TestCase):
     '''
