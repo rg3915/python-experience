@@ -182,9 +182,11 @@ def redun_palavra_frase(palavra, frase):
     Returns:
         dict: Dicionário.
     '''
-    if set(palavra).issubset(set(frase)):
+    _palavra = set(palavra.split())
+    _frase = set(frase.split())
+    if _palavra.issubset(_frase):
         # Verifica quem é o redundante.
-        if len(set(frase)) > len(set(palavra)):
+        if len(_frase) > len(_palavra):
             # O maior é o redundante.
             maior = frase
         else:
