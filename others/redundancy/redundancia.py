@@ -136,11 +136,8 @@ def redun_palavra_palavra(set1, set2):
     cj2 = set(set2.split())
     if cj1.issubset(cj2) or cj2.issubset(set(cj1)):
         # Verifica quem é o redundante.
-        if len(cj1) > len(cj2):
-            # O maior é o redundante.
-            maior = set1
-        else:
-            maior = set2
+        # O maior é o redundante.
+        maior = set1 if len(cj1) > len(cj2) else set2
         resposta = {'eh_redundante': True, 'quem': maior}
     else:
         resposta = {}
