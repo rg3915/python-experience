@@ -157,7 +157,10 @@ def redun_frase_frase(str1, str2):
     '''
     if str1 in str2 or str2 in str1:
         # Verifica quem é o redundante.
-        if len(set(str1)) > len(set(str2)):
+        cj1 = set(str1.split())
+        cj2 = set(str2.split())
+        if len(cj1) > len(cj2):
+            # if len(set(str1)) > len(set(str2)):
             # O maior é o redundante.
             maior = str1
         else:
