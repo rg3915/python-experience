@@ -171,6 +171,12 @@ class RedundanciaPPTest(unittest.TestCase):
     Redundância entre palavra e palavra.
     '''
 
+    def test_pp_aaa(self):
+        set1 = 'aaa'
+        set2 = 'Amanda'
+        esperado = {}
+        self.assertEqual(redun_palavra_palavra(set1, set2), esperado)
+
     def test_pp_joao(self):
         set1 = 'João'
         set2 = 'João Augusto'
