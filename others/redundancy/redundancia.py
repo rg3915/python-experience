@@ -132,8 +132,8 @@ def redun_palavra_palavra(set1, set2):
     Returns:
         dict: Dicionário.
     '''
-    cj1 = set(set1.split())
-    cj2 = set(set2.split())
+    cj1 = set(set1.lower().split())
+    cj2 = set(set2.lower().split())
     if cj1.issubset(cj2) or cj2.issubset(set(cj1)):
         # Verifica quem é o redundante.
         # O maior é o redundante.
@@ -155,9 +155,9 @@ def redun_frase_frase(str1, str2):
     Returns:
         dict: Dicionário.
     '''
-    cj1 = set(str1.split())
-    cj2 = set(str2.split())
-    if str1 in str2 or str2 in str1:
+    cj1 = set(str1.lower().split())
+    cj2 = set(str2.lower().split())
+    if str1.lower() in str2.lower() or str2.lower() in str1.lower():
         # Verifica quem é o redundante.
         # O maior é o redundante.
         maior = str1 if len(cj1) > len(cj2) else str2
@@ -178,8 +178,8 @@ def redun_palavra_frase(palavra, frase):
     Returns:
         dict: Dicionário.
     '''
-    _palavra = set(palavra.split())
-    _frase = set(frase.split())
+    _palavra = set(palavra.lower().split())
+    _frase = set(frase.lower().split())
     if _palavra.issubset(_frase):
         # Verifica quem é o redundante.
         # O maior é o redundante.
