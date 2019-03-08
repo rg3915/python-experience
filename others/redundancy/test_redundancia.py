@@ -273,6 +273,12 @@ class RedundanciaPPTest(unittest.TestCase):
         esperado = {'eh_redundante': True, 'quem': set2}
         self.assertEqual(redun_palavra_palavra(set1, set2), esperado)
 
+    def test_pp_submarino(self):
+        set1 = 'submarino'
+        set2 = 'submarino amarelo'
+        esperado = {'eh_redundante': True, 'quem': set2}
+        self.assertEqual(redun_palavra_palavra(set1, set2), esperado)
+
 
 class RedundanciaFFTest(unittest.TestCase):
     '''
@@ -300,6 +306,18 @@ class RedundanciaFFTest(unittest.TestCase):
     def test_ff4(self):
         str1 = "João conhece Gomes"
         str2 = "João conhece"
+        esperado = {'eh_redundante': True, 'quem': str1}
+        self.assertEqual(redun_frase_frase(str1, str2), esperado)
+
+    def test_ff5(self):
+        str1 = "Teste de frases"
+        str2 = "teste de"
+        esperado = {'eh_redundante': True, 'quem': str1}
+        self.assertEqual(redun_frase_frase(str1, str2), esperado)
+
+    def test_ff6(self):
+        str1 = "baba cade"
+        str2 = "baba"
         esperado = {'eh_redundante': True, 'quem': str1}
         self.assertEqual(redun_frase_frase(str1, str2), esperado)
 
@@ -331,6 +349,30 @@ class RedundanciaPFTest(unittest.TestCase):
         palavra = "João conhece Maria"
         frase = "João Maria"
         esperado = {}
+        self.assertEqual(redun_palavra_frase(palavra, frase), esperado)
+
+    def test_pf5(self):
+        palavra = "Americanas"
+        frase = "Americanas teste"
+        esperado = {'eh_redundante': True, 'quem': frase}
+        self.assertEqual(redun_palavra_frase(palavra, frase), esperado)
+
+    def test_pp_submarino1(self):
+        palavra = 'submarino'
+        frase = 'submarino amarelo'
+        esperado = {'eh_redundante': True, 'quem': frase}
+        self.assertEqual(redun_palavra_frase(palavra, frase), esperado)
+
+    def test_pp_submarino2(self):
+        palavra = 'submarino verde amarelo'
+        frase = 'submarino verde'
+        esperado = {}
+        self.assertEqual(redun_palavra_frase(palavra, frase), esperado)
+
+    def test_pp_submarino3(self):
+        palavra = 'submarino verde'
+        frase = 'submarino verde amarelo'
+        esperado = {'eh_redundante': True, 'quem': frase}
         self.assertEqual(redun_palavra_frase(palavra, frase), esperado)
 
 

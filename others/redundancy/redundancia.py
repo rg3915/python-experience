@@ -155,12 +155,13 @@ def redun_frase_frase(str1, str2):
     Returns:
         dict: Dicionário.
     '''
-    cj1 = set(str1.lower().split())
-    cj2 = set(str2.lower().split())
+    # cj1 = set(str1.lower().split())
+    # cj2 = set(str2.lower().split())
     if str1.lower() in str2.lower() or str2.lower() in str1.lower():
         # Verifica quem é o redundante.
         # O maior é o redundante.
-        maior = str1 if len(cj1) > len(cj2) else str2
+        # maior = str1 if len(cj1) > len(cj2) else str2
+        maior = str1 if len(str1.lower()) > len(str2.lower()) else str2
         resposta = {'eh_redundante': True, 'quem': maior}
     else:
         resposta = {}
