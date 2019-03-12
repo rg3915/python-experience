@@ -16,6 +16,8 @@ https://www.python.org/dev/peps/pep-0526/
 
 Exemplo com retorno de string.
 
+### example01.py
+
 ```
 # example01.py
 def add(a: int, b: int) -> int:
@@ -28,6 +30,8 @@ Rodando o mypy
 $ mypy example01.py 
 example01.py:2: error: Incompatible return value type (got "str", expected "int")
 ```
+
+### example02.py
 
 Exemplo com string nos parâmetros de entrada.
 
@@ -72,8 +76,10 @@ O mypy é uma experiência de checador de tipo estático.
 
 ## Mais exemplos
 
+### example03.py
+
 ```
-example03.py
+# example03.py
 a: int = 10 # type hint
 
 # example03.py:1: error: Variable annotation syntax is only supported in
@@ -82,8 +88,10 @@ a: int = 10 # type hint
 # py 3.7
 ```
 
+### example04.py
+
 ```
-example04.py
+# example04.py
 from typing import List
 
 
@@ -95,6 +103,8 @@ def fib(a: int) -> List[int]:
 $ mypy example04.py 
 example04.py:5: error: Incompatible return value type (got "Tuple[int, int, int, int]", expected "List[int]")
 ```
+
+### example05.py
 
 ```
 # example05.py
@@ -113,6 +123,7 @@ $ mypy example05.py
 example05.py:8: error: Return value expected
 ```
 
+### Mais alguns exemplos
 
 ```
 from collections import namedtuple
