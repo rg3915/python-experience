@@ -75,11 +75,13 @@ print(add(40, 2))
 
 ## Descrição
 
-O mypy ajuda a definir o 'type hints', são anotações.
+O [mypy](http://mypy-lang.org/) ajuda a definir o 'type hints'.
 
-type hints: Análise estática das anotações de tipo
+Type hinting: Sugestão de tipos
 
-O mypy é uma experiência de checador de tipo estático.
+A sugestão de tipos oferece a capacidade de definir o tipo de valores que podem ser passados para cada argumento de uma função ou método.
+
+O [mypy](http://mypy-lang.org/) é uma experiência de checador de tipo estático.
 
 
 [PEP 484](https://www.python.org/dev/peps/pep-0484/) type hints
