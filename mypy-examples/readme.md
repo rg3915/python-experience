@@ -7,6 +7,8 @@ http://mypy-lang.org/
 
 https://twitter.com/gvanrossum/status/1095036541179555840
 
+Palestra do Guido https://www.youtube.com/watch?v=GiZKuyLKvAA
+
 https://www.python.org/dev/peps/pep-0484/
 
 https://www.python.org/dev/peps/pep-0526/
