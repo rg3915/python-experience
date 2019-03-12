@@ -3,6 +3,17 @@
 http://mypy-lang.org/
 
 
+## Agradecimentos
+
+Agradeço ao grande Eduardo Mendes pela ajuda na preparação desse material.
+
+Assistam ao canal Live de Python
+
+https://www.youtube.com/c/eduardomendes
+
+E apoiem o canal através do apoia.se/livedepython
+
+
 ## Links
 
 https://twitter.com/gvanrossum/status/1095036541179555840
