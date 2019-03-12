@@ -96,7 +96,22 @@ $ mypy example04.py
 example04.py:5: error: Incompatible return value type (got "Tuple[int, int, int, int]", expected "List[int]")
 ```
 
+```
+# example05.py
+from typing import Dict
 
+
+def weekday(day: int) -> Dict[str, str]:
+    if day == 1:
+        return {'day': 'sunday'}
+    else:
+        return  # mude para return {}
+```
+
+```
+$ mypy example05.py
+example05.py:8: error: Return value expected
+```
 
 
 ```
