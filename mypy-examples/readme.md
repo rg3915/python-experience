@@ -1,7 +1,9 @@
-readme.md
-
+# MyPy
 
 http://mypy-lang.org/
+
+
+## Links
 
 https://twitter.com/gvanrossum/status/1095036541179555840
 
@@ -10,32 +12,94 @@ https://www.python.org/dev/peps/pep-0484/
 https://www.python.org/dev/peps/pep-0526/
 
 
+## Exemplos
 
+Exemplo com retorno de string.
 
+```
+# example01.py
+def add(a: int, b: int) -> int:
+    return 'a + b'
+```
+
+Rodando o mypy
+
+```
 $ mypy example01.py 
 example01.py:2: error: Incompatible return value type (got "str", expected "int")
+```
 
+Exemplo com string nos parâmetros de entrada.
+
+```
+# example02.py
+def add(a: int, b: int) -> int:
+    return a + b
+
+print(add('40', '2'))
+```
+
+Rodando o mypy
+
+```
 $ mypy example01.py 
 example01.py:4: error: Argument 1 to "add" has incompatible type "str"; expected "int"
 example01.py:4: error: Argument 2 to "add" has incompatible type "str"; expected "int"
+```
 
-Define o type hints, annotation
+Corrigindo o código:
 
-Análise estática das anotações de tipo
+```
+def add(a: int, b: int) -> int:
+    return a + b
 
-Checador de tipo estático experiência
+print(add(40, 2))
+```
+
+## Descrição
+
+O mypy ajuda a definir o 'type hints', são anotações.
+
+type hints: Análise estática das anotações de tipo
+
+O mypy é uma experiência de checador de tipo estático.
+
+
+[PEP 484](https://www.python.org/dev/peps/pep-0484/) type hints
+
+[PEP 257](https://www.python.org/dev/peps/pep-0257/) docstring
+
+
+## Mais exemplos
+
+```
+example03.py
+a: int = 10 # type hint
+
+# example03.py:1: error: Variable annotation syntax is only supported in
+# Python 3.6 and greater
+
+# py 3.7
+```
+
+```
+example04.py
+from typing import List
+
+
+def fib(a: int) -> List[int]:
+    return (1, 1, 2, 3)  # mude para [1, 1, 2, 3]
+```
+
+```
+$ mypy example04.py 
+example04.py:5: error: Incompatible return value type (got "Tuple[int, int, int, int]", expected "List[int]")
+```
 
 
 
 
-
-PEP 576
-
-PEP 484
-
-PEP 257
-
-
+```
 from collections import namedtuple
 
 
@@ -89,3 +153,4 @@ def xpto(func: Callable, n: Union[int, float, complex]) -> Dict[str, int]:
     return {'Eduardo': 7, 'True': 0}
 
 xpto(lambda x: x, 1.0 + 10j)
+```
