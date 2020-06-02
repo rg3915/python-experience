@@ -2,14 +2,23 @@ import argparse
 
 
 def calc_double(value):
-    print(int(value) * 2)
+    result = int(value) * 2
+    return result
 
 
 def calc_square(value):
-    print(int(value) ** 2)
+    result = int(value) ** 2
+    return result
 
 
 parser = argparse.ArgumentParser(description='Argparse test examples.')
+parser.add_argument(
+    '-n',
+    '-number',
+    type=int,
+    default=0,
+    help='Type a number.'
+)
 parser.add_argument(
     '-d',
     type=calc_double,
@@ -23,3 +32,5 @@ parser.add_argument(
     help='Calculate Square of value.'
 )
 args = parser.parse_args()
+
+print(vars(args))
